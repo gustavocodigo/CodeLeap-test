@@ -1,0 +1,49 @@
+
+
+
+.alert-box-card-outer {
+    background-color: #777777CC;
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+}
+
+
+
+
+
+.alex-box-card {
+    border-radius: 16px;
+border: 1px solid #999;
+background: #FFF;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 600px;
+height: 200px;
+max-width: calc(100% - 24px);
+border: 2px solid black;
+z-index: 999;
+background: #FFF;
+color: black;
+padding: 24px;
+min-height: 146px;
+max-height: 80%;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+}
+
+
+.alex-box-card > div {
+    display: flex;
+    gap: 6px;
+}
+
+.alex-box-card > div > button {
+
+} 

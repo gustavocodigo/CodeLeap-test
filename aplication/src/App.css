@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+body {
+  background: #DDD;
+  color: black;
+  min-height: 100vh;
+}
+
+
+#root {
+  height: 100%;
+}
