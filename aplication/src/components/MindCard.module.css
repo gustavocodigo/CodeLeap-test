@@ -21,5 +21,15 @@
     resize: none;
     width: 100%;
     outline: none;
-    
 }
+
+
+.content-input::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .content-el {
+    margin-top: 24px;
+  }
+  

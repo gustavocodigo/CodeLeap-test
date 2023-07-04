@@ -1,6 +1,6 @@
 @keyframes coming-frame {
     from {
-        transform: translateX(-100%);
+        transform: translateX(-70%);
         opacity: 0;
     }
 
@@ -12,7 +12,7 @@
 
 
 .post-card {
-    transform: translateX(-100%);
+    transform: translateX(-70%);
     margin: 24px;
     border: 1px solid #999;
     color: black;
@@ -74,6 +74,11 @@ align-items: center;
     font-size: 18px;
     padding-top: 16px;
     user-select:text;
+    @media screen and (max-width: 380px) {
+        /* galaxy fold etc */
+        font-size: 12px;
+        
+    }
 }
 
 .username-and-time-component{
@@ -87,7 +92,7 @@ margin-bottom: 0px;
 
     @media screen and (max-width: 380px) {
         /* galaxy fold etc */
-        font-size: 12px;
+        font-size: 10px;
         
     }
 }
@@ -107,7 +112,6 @@ margin-bottom: 0px;
 .postcard-edit-icons-container {
     display: flex;
     gap: 24px;
-
     @media screen and (max-width: 380px) {
         /* galaxy fold etc */
         gap: 2px;

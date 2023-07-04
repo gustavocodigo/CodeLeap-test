@@ -2,6 +2,14 @@
 
 import styles from "./AlertBox.module.css"
 
+
+
+function closeButtonClick() {
+
+}
+
+
+
 function AlertBox(props) {
     return <div className={styles["alert-box-card-outer"]}>
         <div className={styles["alex-box-card"]}>
