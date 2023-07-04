@@ -1,9 +1,9 @@
 
 
-import "./MindCard.css"
+import styles from "./MindCard.module.css"
 
 function MindCard() {
-    return <div className="mind-card">
+    return <div className={styles["mind-card"]}>
        <strong>Whats your mind?</strong><br></br>
        <small>
         Title
@@ -12,7 +12,7 @@ function MindCard() {
        <small>
         Content
        </small>
-       <textarea id="content-input" type="text" />
+       <textarea className={styles["content-input"]} type="text" />
        <button className="button-to-right">
        Create
        </button>

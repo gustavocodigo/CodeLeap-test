@@ -4,10 +4,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: black;
 }
 
 
 .signup-component {
+    
     background: #FFF;
     border-radius: 16px;
     width: 500px;
@@ -18,7 +20,7 @@
     margin: auto;
 }
 
-.signup-component >div {
+.signup-component > div {
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -38,32 +40,12 @@ input {
     padding: 0 11px;
 }
 
-button {
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    margin-top: 16px;
-    height: 32px;
-    width: 100px;
-    background: #7695EC;
-}
 
-
-
-.button-to-right {
-    margin-left: auto;
-}
-
-button:hover {
-   cursor: pointer;
-}
-
-
-#msg {
+.msg {
     margin-top: 24px;;
 }
 
-#title {
+.title {
     font-size: 22px;
     font-weight: 700;
 }

@@ -1,0 +1,126 @@
+@keyframes coming-frame {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.post-card {
+    transform: translateX(-100%);
+    margin: 24px;
+    border: 1px solid #999;
+    color: black;
+    background: #FFF;
+    border-radius: 16px;
+    margin: 24px;
+}
+
+
+.coming-card {
+    animation: coming-frame;
+    animation-duration: 0.3s;
+    transform: translateX(0);
+    
+}
+
+
+.post-card-title {
+    user-select:text;
+
+    @media screen and (max-width: 600px) {
+        /* MOST USED MOBILE DIMENSIONS ETC */
+        font-size: 14px
+      }
+
+      @media screen and (max-width: 380px) {
+       /* galaxy fold etc */
+        font-size: 12px
+      }
+}
+
+.post-card .component-header {
+    border-radius: 16px 16px 0px 0px;
+    background: #7695EC;
+    min-height: 80px;
+align-items: center;
+    display: flex;
+    padding:0 24px;
+    color: white;
+    justify-content: space-between;
+    z-index: 999;
+    @media screen and (max-width: 380px) {
+        /* galaxy fold etc */
+        padding:0 14px;
+    }
+    
+}
+
+.post-card-title {
+    font-size: 22px;
+    @media screen and (max-width: 380px) {
+        /* galaxy fold etc */
+        font-size: 12px;
+    }
+}
+
+.message {
+    padding: 24px;
+    font-size: 18px;
+    padding-top: 16px;
+    user-select:text;
+}
+
+.username-and-time-component{
+margin: 24px;
+margin-bottom: 0px;
+    font-size: 18px;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    user-select:text;
+
+    @media screen and (max-width: 380px) {
+        /* galaxy fold etc */
+        font-size: 12px;
+        
+    }
+}
+
+.content-input {
+    min-height: 74px;
+    padding: 11px;
+    border-radius: 8px;
+    border: 1px solid #777;
+    background: #FFF;
+    color: black;
+    resize: none;
+    width: 100%;
+    outline: none;
+    
+}
+.postcard-edit-icons-container {
+    display: flex;
+    gap: 24px;
+
+    @media screen and (max-width: 380px) {
+        /* galaxy fold etc */
+        gap: 2px;
+        scale: 0.7;
+
+    }
+}
+
+.postcard-icon:hover {
+    cursor: pointer;
+}
+
+.postcard-icon:active {
+    transition: 0.2s;
+    scale: 1.1;
+}
