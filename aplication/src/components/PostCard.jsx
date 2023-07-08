@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+/* eslint-disable react/prop-types */
+
+import { useEffect, useRef } from 'react';
 import styles from "./PostCard.module.css";
 import store from '../store';
 

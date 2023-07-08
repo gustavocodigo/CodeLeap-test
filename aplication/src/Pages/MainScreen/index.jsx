@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import style from "./styles.module.css"
 import MindCard from "../../components/MindCard"
