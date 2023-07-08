@@ -67,6 +67,8 @@ align-items: center;
         /* galaxy fold etc */
         font-size: 12px;
     }
+
+    overflow: scroll;
 }
 
 .message {
@@ -79,6 +81,8 @@ align-items: center;
         font-size: 12px;
         
     }
+
+    overflow: scroll;
 }
 
 .username-and-time-component{
@@ -95,6 +99,8 @@ margin-bottom: 0px;
         font-size: 10px;
         
     }
+
+    overflow: scroll;
 }
 
 .content-input {

@@ -20,3 +20,28 @@
 body {
   min-height: 100vh;
 }
+
+
+
+
+
+
+
+
+
+/* Para navegadores Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Para navegadores IE e Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+/* Para navegadores Chrome, Safari e Opera */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
