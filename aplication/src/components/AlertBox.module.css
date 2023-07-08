@@ -1,7 +1,19 @@
+@keyframes comming {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+
 
 
 
 .alert-box-card-outer {
+    animation-name: comming ;
+    animation-duration: 0.4s;
     background-color: #777777CC;
     width: 100vw;
     height: 100vh;
@@ -24,7 +36,7 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 width: 600px;
-height: 200px;
+min-height: 200px;
 max-width: calc(100% - 24px);
 border: 2px solid black;
 z-index: 999;

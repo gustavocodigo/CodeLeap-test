@@ -2,26 +2,16 @@ import './App.css';
 import Signup from './Pages/Signup';
 import MainScreen from './Pages/MainScreen';
 
-import {Provider} from "react-redux"
-import store from './store';
 
 
-
-
-
+import { useSelector } from "react-redux";
 
 function App() {
-  return (<Provider store={store}>
-  <div id="app">
-      {/* <Signup /> */}
-      
-      <MainScreen/>
+  const user = useSelector(state => state.user);
+  return (
+    <div id="app">
+       {(user == null ? <Signup /> : <MainScreen />)}
     </div>
-
-  </Provider>
-  
-  
-    
   );
 }
 

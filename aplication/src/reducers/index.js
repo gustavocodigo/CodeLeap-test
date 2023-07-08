@@ -4,8 +4,13 @@ const initialState = {
     currentUrl: "",
     focusedPost: -1,
     alerts: {
-        delete_visible: true
-    }
+        delete_visible: false,
+        edit_visible: false,
+        user_visible: false
+    },
+
+
+    user: null
 };
 
 
@@ -66,7 +71,25 @@ function sendDeleteRequest(url) {
 }
 
 
-
+function sendPatchRequest(url, data) {
+    fetch(url, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (response.ok) {
+                console.log('Patch request sent successfully.');
+            } else {
+                console.error('Error sending patch request. Status code:', response.status);
+            }
+        })
+        .catch(error => {
+            console.error('Error sending patch request:', error);
+        });
+}
 
 
 
@@ -74,6 +97,11 @@ function sendDeleteRequest(url) {
 
 const mainReducer = (state = initialState, action) => {
     switch (action.type) {
+
+
+        case 'SET_USER':
+            return { ...state, user: action.payload.user }
+
         case 'HIDE_DELETE_ALERT':
             return {
                 ...state,
@@ -89,9 +117,47 @@ const mainReducer = (state = initialState, action) => {
                 alerts: {
                     ...state.alerts,
                     delete_visible: true,
-                    
+
                 }
             };
+
+        case 'SHOW_USER_ALERT':
+            return {
+                ...state,
+                alerts: {
+                    ...state.alerts,
+                    user_visible: true,
+                }
+            };
+
+        case 'HIDE_USER_ALERT':
+            return {
+                ...state,
+                alerts: {
+                    ...state.alerts,
+                    user_visible: false,
+                }
+            };
+
+        case 'HIDE_EDIT_ALERT':
+            return {
+                ...state,
+                alerts: {
+                    ...state.alerts,
+                    edit_visible: false
+                }
+            };
+        case 'SHOW_EDIT_ALERT':
+            return {
+                ...state,
+                focusedPost: action.payload.id,
+                alerts: {
+                    ...state.alerts,
+                    edit_visible: true,
+
+                }
+            };
+
 
         case 'LOAD_POSTS':
             console.log("LOADING POSTS")
@@ -116,19 +182,31 @@ const mainReducer = (state = initialState, action) => {
 
         case 'DELETE_POST':
             sendDeleteRequest("https://dev.codeleap.co.uk/careers/" + action.payload.id)
-           
+
+            return { ...state };
+
+        case 'EDIT_POST':
+            {
+                let data = {
+                    title: action.payload.title,
+                    content: action.payload.content
+                };
+
+
+                sendPatchRequest("https://dev.codeleap.co.uk/careers/" + state.focusedPost + "/", data)
+            }
             return { ...state };
         case 'DELETE_FOCUSED_POST':
             console.log("deleting: ", state.focusedPost)
-            sendDeleteRequest("https://dev.codeleap.co.uk/careers/" + state.focusedPost+"/")
-          
+            sendDeleteRequest("https://dev.codeleap.co.uk/careers/" + state.focusedPost + "/")
+
             return state
 
         case 'SEND_NEW_POST':
             {
 
                 let data = {
-                    username: "gustavocodigo",
+                    username: state.user,
                     title: action.payload.title,
                     content: action.payload.content
                 };

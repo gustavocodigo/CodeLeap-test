@@ -45,3 +45,8 @@ body {
   height: 0;
   background: transparent;
 }
+
+
+* {
+  word-wrap: break-word; /*prevent big word overflow*/
+}

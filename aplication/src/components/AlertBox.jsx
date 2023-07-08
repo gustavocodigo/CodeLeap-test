@@ -4,9 +4,6 @@ import styles from "./AlertBox.module.css"
 
 
 
-function closeButtonClick() {
-
-}
 
 
 
