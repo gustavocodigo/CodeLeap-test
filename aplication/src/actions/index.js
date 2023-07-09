@@ -1,12 +1,5 @@
 // actions.js
 
-const incrementCounter = (amount) => {
-    return {
-        type: 'INCREMENT_COUNTER',
-        payload: amount
-    };
-};
-
 
 const loadPosts = () => {
     return {
@@ -14,4 +7,6 @@ const loadPosts = () => {
     };
 };
 
-export { incrementCounter, loadPosts };
+
+
+export { loadPosts };

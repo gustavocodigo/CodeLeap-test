@@ -14,32 +14,34 @@ import { useSelector } from "react-redux";
 import loading_icon from "../../assets/loading-blue.gif"
 
 
-import moment from 'moment';
-
 function formatElapsedTime(dateString) {
-  const now = moment();
-  const date = moment(dateString);
-  const diffDuration = moment.duration(now.diff(date));
-  const diffSeconds = diffDuration.asSeconds();
+    const now = new Date();
+    const oldDate = new Date(dateString);
+    const diffDuration = now - oldDate;
+    let diffInSeconds = Math.floor(diffDuration / 1000);
   
-  if (diffSeconds < 60) {
-    if (diffSeconds <= 1) {
-      return `1 second ago`;
-    } else {
-      return `${Math.floor(diffSeconds)} seconds ago`;
+    if (diffInSeconds < 5) {
+      return "Right now"; // for devices with incorrect dates
     }
-  } else if (diffSeconds < 3600) {
-    const diffMinutes = Math.floor(diffSeconds / 60);
-    return `${diffMinutes} minutes ago`;
-  } else if (diffSeconds < 86400) {
-    const diffHours = Math.floor(diffSeconds / 3600);
-    return `${diffHours} hours ago`;
-  } else {
-    const diffDays = Math.floor(diffSeconds / 86400);
-    return `${diffDays} days ago`;
+  
+    if (diffInSeconds === 1) {
+      return diffInSeconds + " second";
+    } else if (diffInSeconds < 60) {
+      return diffInSeconds + " seconds";
+    } else if (diffInSeconds < 3600) {
+      const diffInMinutes = Math.floor(diffInSeconds / 60);
+      return diffInMinutes === 1 ? diffInMinutes + " minute" : diffInMinutes + " minutes";
+    } else if (diffInSeconds < 86400) {
+      const diffInHours = Math.floor(diffInSeconds / 3600);
+      return diffInHours === 1 ? diffInHours + " hour" : diffInHours + " hours";
+    } else if (diffInSeconds < 604800) {
+      const diffInDays = Math.floor(diffInSeconds / 86400);
+      return diffInDays === 1 ? diffInDays + " day" : diffInDays + " days";
+    } else {
+      const diffInWeeks = Math.floor(diffInSeconds / 604800);
+      return diffInWeeks === 1 ? diffInWeeks + " week" : diffInWeeks + " weeks";
+    }
   }
-}
-
   
   
 // Exemplo de uso:

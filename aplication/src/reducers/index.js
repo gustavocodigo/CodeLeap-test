@@ -156,26 +156,21 @@ const mainReducer = (state = initialState, action) => {
                 }
             };
         case 'SHOW_EDIT_ALERT':
-            const element = state.currentPostData.results.filter((element) =>  (
-                element.id === action.payload.id))[0]
+            {
+                const element = state.currentPostData.results.filter((element) => (
+                    element.id === action.payload.id))[0]
+                return {
+                    ...state,
+                    focusedPost: action.payload.id,
 
+                    focusedPostObject: element,
+                    alerts: {
+                        ...state.alerts,
+                        edit_visible: true,
 
-
-                console.log("focos =>", element)
-
-            return {
-                ...state,
-                focusedPost: action.payload.id,
-                
-                focusedPostObject : element,
-                alerts: {
-                    ...state.alerts,
-                    edit_visible: true,
-
-                }
-            };
-
-
+                    }
+                };
+            }
         case 'LOAD_POSTS':
             console.log("LOADING POSTS")
             refresh_posts()
