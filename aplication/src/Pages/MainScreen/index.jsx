@@ -25,21 +25,21 @@ function formatElapsedTime(dateString) {
     }
   
     if (diffInSeconds === 1) {
-      return diffInSeconds + " second";
+      return diffInSeconds + " second ago";
     } else if (diffInSeconds < 60) {
-      return diffInSeconds + " seconds";
+      return diffInSeconds + " seconds ago";
     } else if (diffInSeconds < 3600) {
       const diffInMinutes = Math.floor(diffInSeconds / 60);
-      return diffInMinutes === 1 ? diffInMinutes + " minute" : diffInMinutes + " minutes";
+      return diffInMinutes === 1 ? diffInMinutes + " minute ago" : diffInMinutes + " minutes ago";
     } else if (diffInSeconds < 86400) {
       const diffInHours = Math.floor(diffInSeconds / 3600);
-      return diffInHours === 1 ? diffInHours + " hour" : diffInHours + " hours";
+      return diffInHours === 1 ? diffInHours + " hour ago" : diffInHours + " hours ago";
     } else if (diffInSeconds < 604800) {
       const diffInDays = Math.floor(diffInSeconds / 86400);
-      return diffInDays === 1 ? diffInDays + " day" : diffInDays + " days";
+      return diffInDays === 1 ? diffInDays + " day ago" : diffInDays + " days ago";
     } else {
       const diffInWeeks = Math.floor(diffInSeconds / 604800);
-      return diffInWeeks === 1 ? diffInWeeks + " week" : diffInWeeks + " weeks";
+      return diffInWeeks === 1 ? diffInWeeks + " week ago" : diffInWeeks + " weeks ago";
     }
   }
   
@@ -65,12 +65,12 @@ function Signup() {
     const focusedPostObject = useSelector(state => state.focusedPostObject);
 
     useEffect(() => {
-        // Função executada toda vez que "focusedPostObject" for alterado
+        
         if (focusedPostObject === null) return
         console.log('focusedPostObject alterado:', focusedPostObject);
         setTitleText(focusedPostObject.title)
         setContentText(focusedPostObject.content)
-        // Realize qualquer ação necessária com o novo valor de "focusedPostObject"
+
     }, [focusedPostObject]);
 
 
