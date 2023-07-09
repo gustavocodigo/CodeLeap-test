@@ -51,7 +51,7 @@ List of details for the good UI:
 </ul>
 
 
-#list of actions below (obs it present in reducers):
+# list of actions below (obs it present in reducers):
 
 <pre>
 case 'SET_USER':
@@ -105,3 +105,7 @@ case 'LOAD_PREVIOUS_POSTS':
 
 
 </pre>
+
+
+# API
+the apis are provided by the codeleap team.
