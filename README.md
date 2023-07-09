@@ -20,10 +20,12 @@ npm run dev
 Frontend for codeleap test <b>gustavocodigo</b>
 
 First screen located at /Pages/Signup
+<br>
 ![image](https://github.com/gustavocodigo/CodeLeap-test/assets/108258194/c392d22e-121b-41de-87ed-76a02b9534d4)
 
 
 after setting a name will be rendered the next page located at /Pages/MainScreen
+<br>
 ![image](https://github.com/gustavocodigo/CodeLeap-test/assets/108258194/bd6af810-f142-44db-9043-c038ee3c4f18)
 
 
