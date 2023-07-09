@@ -2,7 +2,7 @@
 this is a test for frontend aplication.
 
  
-<img width=400 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
+<img width=100 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
           
 **We handle all application states with Redux located at /reducers/index.js**
 
