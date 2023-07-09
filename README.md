@@ -45,4 +45,5 @@ List of items:
   <li>✅ Store user as cookie</li>
   <li>✅ Logout functionality</li>
   <li>✅ Prevent zoom for mobile</li>
+ <li>✅ Prevent texts overflow</li>
 </ul>
