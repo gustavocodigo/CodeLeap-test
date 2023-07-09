@@ -18,6 +18,7 @@ function PostCard(props) {
     function onEditCardClick() {
         console.log(props.obj_id)
         store.dispatch({type:"SHOW_EDIT_ALERT", payload:{id: props.obj_id}})
+        
      }
 
 

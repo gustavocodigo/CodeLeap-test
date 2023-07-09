@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 
 import store from "../../store"
 import { loadPosts } from "../../actions"
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 import loading_icon from "../../assets/loading-blue.gif"
@@ -32,15 +32,35 @@ function formatElapsedTime(dateString) {
 
 
 
-function Signup({ currentPostData, alerts }) {
+function Signup() {
 
 
     const user_visible = useSelector(state => state.alerts.user_visible);
     const username = useSelector(state => state.user);
 
 
+    const currentPostData = useSelector(state => state.currentPostData);
+  
+
+    const alerts = useSelector(state => state.alerts);
+
     const [contextText, setContentText] = useState("")
     const [titleText, setTitleText] = useState("")
+
+
+    const focusedPostObject = useSelector(state => state.focusedPostObject);
+
+    useEffect(() => {
+      // Função executada toda vez que "focusedPostObject" for alterado
+      if(focusedPostObject ===null)return
+      console.log('focusedPostObject alterado:', focusedPostObject);
+      setTitleText(focusedPostObject.title)
+      setContentText(focusedPostObject.content)
+      // Realize qualquer ação necessária com o novo valor de "focusedPostObject"
+    }, [focusedPostObject]);
+
+  
+
 
     function handleTextContent(text) {
         setContentText(text.target.value)
@@ -54,6 +74,7 @@ function Signup({ currentPostData, alerts }) {
     useEffect(() => {
         setTitleText("")
         setContentText("")
+        
     }, [])
 
 
@@ -282,14 +303,6 @@ function Signup({ currentPostData, alerts }) {
 
 }
 
-const mapStateToProps = (state) => {
-    return {
-        currentPostData: state.currentPostData,
-        alerts: state.alerts,
-    };
-};
 
 
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default Signup;
