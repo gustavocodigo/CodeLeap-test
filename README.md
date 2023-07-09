@@ -39,7 +39,7 @@ It works for several devices:
 **Obs tested on my real device A30**
 also using a responsive extension.
 
-List of items:
+List of details for the good UI:
 <ul>
   <li>✅ Fixed header</li>
   <li>✅ Text selection for posts</li>
