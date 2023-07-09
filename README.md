@@ -18,6 +18,8 @@ Instructions to run as developer.
   npm run build
 </pre>
 
+<b>Obs: the Design was provided by CodeLeap Team.</b>
+<br>
 First screen located at /Pages/Signup
 
 ![image](https://github.com/gustavocodigo/CodeLeap-test/assets/108258194/c392d22e-121b-41de-87ed-76a02b9534d4)
