@@ -1,6 +1,9 @@
 # CodeLeap test
 this is a test for frontend aplication.
 
+ 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
+          
 **We handle all application states with Redux located at /reducers/index.js**
 
 Instructions to build this app.
