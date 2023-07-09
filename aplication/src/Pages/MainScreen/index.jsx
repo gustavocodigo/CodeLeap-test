@@ -7,7 +7,7 @@ import AlertBox from "../../components/AlertBox"
 import { useEffect, useState } from "react"
 
 import store from "../../store"
-import { loadPosts } from "../../actions"
+
 import { useSelector } from "react-redux";
 
 
@@ -44,30 +44,6 @@ function formatElapsedTime(dateString) {
   }
   
   
-// Exemplo de uso:
-//   const dateString = '2023-07-08T10:30:00Z'; // Data em UTC
-//   const localDateString = new Date(dateString).toLocaleString();
-
-//   console.log(localDateString); // Exibe a data convertida para o fuso horário local
-
-
-
-// {
-// 	"id": 65039,
-// 	"username": "user",
-// 	"created_datetime": "2023-07-09T02:04:37.898865Z",
-// 	"title": "3333",
-// 	"content": "4444"
-// }
-
-
-// {
-// 	"id": 65040,
-// 	"username": "user",
-// 	"created_datetime": "2023-07-09T02:04:58.207805Z",
-// 	"title": "3333",
-// 	"content": "4444"
-// }
 
 
 function Signup() {
@@ -138,7 +114,7 @@ function Signup() {
 
 
     useEffect(() => {
-        store.dispatch(loadPosts())
+        store.dispatch({ type: "LOAD_POSTS" })
     }, [])
 
     function handleCancelAlertClick() {

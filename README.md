@@ -102,7 +102,6 @@ case 'LOAD_NEXT_POSTS':
 case 'LOAD_PREVIOUS_POSTS':
   // Load the previous posts.
 
-default:
-  // Return the current state.
+
 
 </pre>
