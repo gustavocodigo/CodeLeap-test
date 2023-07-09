@@ -15,7 +15,7 @@ Instructions to build this app.
 Instructions to run as developer.
 <pre>
   npm install
-  npm run build
+  npm run dev
 </pre>
 
 <b>Obs: the Design was provided by CodeLeap Team.</b>
