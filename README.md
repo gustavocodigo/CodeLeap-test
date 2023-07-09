@@ -3,6 +3,17 @@ this is a test for frontend aplication.
 
 **We handle all application states with Redux located at /reducers/index.js**
 
+Instructions to build this app.
+<pre>
+  npm install
+  npm run build
+</pre>
+
+Instructions to run as developer.
+<pre>
+  npm install
+  npm run build
+</pre>
 
 First screen located at /Pages/Signup
 
